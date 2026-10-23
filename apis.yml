@@ -1,23 +1,68 @@
 aid: aodn-australian-ocean-data-network
+
 name: AODN - Australian Ocean Data Network
-description: 'AODN - Australian Ocean Data Network is a company surfaced via the API Evangelist harvest
-  backlog (source: vc-portfolio) and added to the network as a stub for full-pipeline profiling.'
+
+image: https://imos.org.au/wp-content/uploads/2024/06/ryan-wilson-YdpDztAnW9w-unsplash.jpg
+
+description: 'AODN - Australian Ocean Data Network (AODN) provides a collaborative, distributed data infrastructure for marine and oceanographic research in Australia. It aggregates, curates, and makes accessible a wide range of ocean data, including physical, chemical, biological, and geological datasets, through web services and portals. AODN supports scientists, policymakers, and the public by offering tools for data discovery, visualization, and download, fostering open science and informed decision‑making about marine environments.'
+
 url: https://raw.githubusercontent.com/api-evangelist/aodn-australian-ocean-data-network/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:vc-portfolio
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-23 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-23'
+
 modified: '2026-10-23'
+
 tags:
 - Company
-apis: []
+- Oceanography
+- Data
+- Research
+- Australia
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/aodn-australian-ocean-data-network-hosts.yml
+- type: Vendors
+  url: vendors/aodn-australian-ocean-data-network-vendors.yml
+- type: TermsOfService
+  url: https://imos.org.au/terms-of-use
+- type: Newsroom
+  url: https://imos.org.au/news
+- type: DomainSecurity
+  url: security/aodn-australian-ocean-data-network-domain-security.yml
 - type: Website
-  url: http://www.imos.org.au/aodn.html
+  url: https://imos.org.au/data/about-the-australian-ocean-data-network
+- type: DeveloperPortal
+  url: https://portal.aodn.org.au/
+
+apis: []
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: Documentation pages at https://portal.aodn.org.au/ return HTML shells and 404 for spec files, preventing machine-readable contract discovery.
+  evidence:
+    - url: https://portal.aodn.org.au/docs
+      status: 404
+  checked: '2026-10-23'
+x-enrichment:
+  date: '2026-10-23'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

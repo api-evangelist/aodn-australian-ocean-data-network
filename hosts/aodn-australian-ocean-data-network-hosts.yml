@@ -1,0 +1,53 @@
+generated: '2026-10-23'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 3
+  own: 1
+  other_domain: 2
+  platform: 0
+  roles:
+  - api
+  - portal
+  - website
+hosts:
+- host: api.org.au
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: api.org.au
+  role: api
+  relation: other-domain
+- host: imos.org.au
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - TermsOfService
+  - Newsroom
+  - Website
+  serves:
+  - cdn
+  vendor: cloudflare
+  registrable_domain: imos.org.au
+  role: website
+  relation: own
+- host: portal.aodn.org.au
+  found_by:
+  - pointer
+  - probed
+  - docs-index
+  - contract-discovery
+  - well-known
+  types:
+  - DeveloperPortal
+  serves:
+  - docs
+  registrable_domain: aodn.org.au
+  role: portal
+  relation: other-domain
